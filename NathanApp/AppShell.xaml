@@ -1,0 +1,20 @@
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:NathanApp.Views"
+       x:Class="NathanApp.AppShell">
+
+    <TabBar>
+        <Tab Title="Acceuil" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate views:Home}" />
+        </Tab>
+        <Tab Title="Films" Icon="movies.png">
+            <ShellContent x:Name="MovieContent" />
+        </Tab>
+        <Tab Title="Ajouter" Icon="add.png">
+            <ShellContent x:Name="AddMovieContent" />
+        </Tab>
+        <Tab Title="ModifyMovie" Icon="monkey.png">
+            <ShellContent x:Name="ModifyMovieContent" />
+        </Tab>
+    </TabBar>
+</Shell>

@@ -1,0 +1,57 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NathanApp.Views.AddMovie">
+
+    <Grid HorizontalOptions="CenterAndExpand" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.17*" />
+            <RowDefinition Height="0.13*" />
+            <RowDefinition Height="0.13*" />
+            <RowDefinition Height="0.13*" />
+            <RowDefinition Height="0.13*" />
+            <RowDefinition Height="0.13*" />
+            <RowDefinition Height="0.075*" />
+            <RowDefinition Height="0.06*" />
+            <RowDefinition Height="0.045*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.05*" />
+            <ColumnDefinition Width="0.90*" />
+            <ColumnDefinition Width="0.05*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="0" x:Name="lbl" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" >
+            Ajouter un film
+        </Label>
+
+        <StackLayout Grid.Column="1" Grid.Row="1" WidthRequest="350" Padding="20">
+            <Label Text="Titre :" HorizontalTextAlignment="Start" FontSize="Medium" />
+            <Entry x:Name="Title" Placeholder="Star wars ? Harry Potter" />
+        </StackLayout>
+
+        <StackLayout Grid.Column="1" Grid.Row="2" WidthRequest="350" Padding="20">
+            <Label Text="Description :" HorizontalTextAlignment="Start" FontSize="Medium" />
+            <Entry x:Name="Overview" Placeholder="Il était une fois ..." />
+        </StackLayout>
+
+        <StackLayout Grid.Column="1" Grid.Row="3" WidthRequest="350" Padding="20">
+            <Label Text="Image :" HorizontalTextAlignment="Start" FontSize="Medium" />
+            <Entry x:Name="Poster" Placeholder="https:// ..." />
+        </StackLayout>
+
+        <StackLayout Grid.Column="1" Grid.Row="4" WidthRequest="350" Padding="20">
+            <Label Text="Date de réalisation :" HorizontalTextAlignment="Start" FontSize="Medium" />
+            <Entry x:Name="Date" Placeholder="aaaa-mm-jj" />
+        </StackLayout>
+
+        <StackLayout Grid.Column="1" Grid.Row="5" WidthRequest="350" Padding="20">
+            <Label Text="Note moyenne :" HorizontalTextAlignment="Start" FontSize="Medium" />
+            <Entry x:Name="Average" Placeholder="5.0 (Entre 0.0 et 5.0)" />
+        </StackLayout>
+
+        <Button Grid.Column="1" Grid.Row="7" Text="Valider" Clicked="AddButtonClicked" />
+
+    </Grid>
+
+</ContentPage>

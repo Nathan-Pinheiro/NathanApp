@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NathanApp.Views.Home">
+
+
+    <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="SpaceEvenly">
+
+        <Label
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontAttributes="Bold" 
+            FontSize="Title" 
+        >
+            Les films du moment !
+        </Label>
+
+        <Grid
+            HorizontalOptions="CenterAndExpand"
+            ColumnSpacing="10">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="0.4*" />
+            </Grid.ColumnDefinitions>
+
+            <Image 
+                Grid.Column="0"
+                Source="https://www.themoviedb.org//t/p/w300_and_h450_bestv2//ypi93qgPly1pX9LdbAy6tsJSjZg.jpg" 
+                VerticalOptions="EndAndExpand"
+                HorizontalOptions="FillAndExpand" 
+            />
+
+            <Image 
+                Grid.Column="2"
+                Source="https://www.themoviedb.org//t/p/w300_and_h450_bestv2//2L3LAhg6qZmL4FQUnkr7X5a34cn.jpg" 
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="FillAndExpand" 
+            />
+
+        </Grid>
+
+        <Grid
+            HorizontalOptions="CenterAndExpand"
+            ColumnSpacing="50">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.25*" />
+            </Grid.ColumnDefinitions>
+
+            <Label 
+                Grid.Column="0"
+                Text="&lt;"
+                FontSize="Title"
+                FontAttributes="Bold"
+                VerticalTextAlignment="Center"
+                HeightRequest="200"
+            />
+
+            <CarouselView 
+                VerticalOptions="End"
+                HorizontalOptions="Center"
+                WidthRequest="200" 
+                HeightRequest="200"
+                Grid.Column="1"
+>
+                <CarouselView.ItemsSource>
+                    <x:Array Type="{x:Type ImageSource}">
+                        <FileImageSource File="https://www.themoviedb.org//t/p/w300_and_h450_bestv2//k0qkgSIYEAEswH0UIvrub5ezVOg.jpg"/>
+                        <FileImageSource File="https://www.themoviedb.org//t/p/w300_and_h450_bestv2//mhN11WUCWX4ncJTTRykpTr6a1aQ.jpg"/>
+                        <FileImageSource File="https://www.themoviedb.org//t/p/w300_and_h450_bestv2//5ZQHBKNp5dmooRUkbudfZVP7mjV.jpg"/>
+                    </x:Array>
+                </CarouselView.ItemsSource>
+
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding}" Aspect="AspectFit"/>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <Label 
+                Grid.Column="2"
+                Text=">"
+                FontSize="Title"
+                FontAttributes="Bold"
+                VerticalTextAlignment="Center"
+                HeightRequest="200"
+            />
+
+        </Grid>
+
+        
+        <Button
+            Text="En savoir plus"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Clicked="OnButtonClicked" 
+        />
+        
+    </FlexLayout>
+</ContentPage>
