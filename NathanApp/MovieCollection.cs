@@ -26,6 +26,16 @@ namespace NathanApp
             MovieItems.Add(item);
         }
 
+        public void RemoveItemById(int id)
+        {
+            MovieItems.RemoveAt(id);
+        }
+
+        public void RemoveItem(MovieItem item)
+        {
+            MovieItems.Remove(item);
+        }
+
         public async void LoadData()
         {
             try

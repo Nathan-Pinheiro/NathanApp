@@ -9,7 +9,8 @@
         HorizontalOptions="Center"
         WidthRequest="200"
         HeightRequest="200"
-        IsAnimationPlaying="True"
+        IsAnimationPlaying="False"
+        x:Name="gif"
     />
 
 </ContentPage>

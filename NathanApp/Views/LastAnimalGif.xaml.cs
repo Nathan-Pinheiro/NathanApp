@@ -6,5 +6,12 @@
         {
             InitializeComponent();
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            await Task.Delay(150);
+            gif.IsAnimationPlaying = true;
+        }
     }
 }

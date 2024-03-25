@@ -57,6 +57,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Platforms\Android\Resources\drawables\appicon.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
@@ -64,6 +68,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Views\ModifyMovie.xaml.cs">
+	    <DependentUpon>ModifyMovie.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\AddMovie.xaml.cs">
 	    <DependentUpon>AddMovie.xaml</DependentUpon>
 	  </Compile>
@@ -73,8 +80,8 @@
 	  <Compile Update="Views\LastAnimalGif.xaml.cs">
 	    <DependentUpon>LastAnimalGif.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Views\ModifyMovie.xaml.cs">
-	    <DependentUpon>ModifyMovie.xaml</DependentUpon>
+	  <Compile Update="Views\FindMovie.xaml.cs">
+	    <DependentUpon>FindMovie.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Views\Movies.xaml.cs">
 	    <DependentUpon>Movies.xaml</DependentUpon>
@@ -85,10 +92,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\ModifyMovie.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\MovieDetails.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\ModifyMovie.xaml">
+	  <MauiXaml Update="Views\FindMovie.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\Movies.xaml">

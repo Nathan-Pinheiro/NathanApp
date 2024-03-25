@@ -4,12 +4,22 @@ namespace NathanApp
 {
     public class MovieItem
     {
-        public MovieItem( string title, string overview, string release_date, string poster_path, string vote_average )
+        public MovieItem( string title, string overview, string release_date, string poster_path, string short_path, string vote_average )
         {
             this.Title = title;
             this.Overview = overview;
             this.ReleaseDate = release_date;
             this.PosterPath = poster_path;
+            this.ShortPath = short_path;
+            this.VoteAverage = vote_average;
+        }
+        public MovieItem(string title, string overview, string release_date, string poster_path, string vote_average)
+        {
+            this.Title = title;
+            this.Overview = overview;
+            this.ReleaseDate = release_date;
+            this.PosterPath = poster_path;
+            this.ShortPath = poster_path;
             this.VoteAverage = vote_average;
         }
 
@@ -17,6 +27,7 @@ namespace NathanApp
         public string Overview { get; set; }
         public string ReleaseDate { get; set; }
         public string PosterPath { get; set; }
+        public string ShortPath { get; set; }
         public string VoteAverage { get; set; }
     }
 }

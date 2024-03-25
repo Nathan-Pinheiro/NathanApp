@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Maui.LifecycleEvents;
 
 namespace NathanApp
 {
@@ -15,10 +16,7 @@ namespace NathanApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-#if DEBUG
     		builder.Logging.AddDebug();
-#endif
-
             return builder.Build();
         }
     }

@@ -1,54 +1,59 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NathanApp.Views.ModifyMovie">
 
     <Grid HorizontalOptions="CenterAndExpand" ColumnSpacing="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.15*" />
-            <RowDefinition Height="0.85*" />
+            <RowDefinition Height="0.17*" />
+            <RowDefinition Height="0.12*" />
+            <RowDefinition Height="0.12*" />
+            <RowDefinition Height="0.12*" />
+            <RowDefinition Height="0.12*" />
+            <RowDefinition Height="0.20*" />
+            <RowDefinition Height="0.075*" />
+            <RowDefinition Height="0.06*" />
+            <RowDefinition Height="0.045*" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Column="1" Grid.Row="0" x:Name="lbl" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" >
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.05*" />
+            <ColumnDefinition Width="0.45*" />
+            <ColumnDefinition Width="0.45*" />
+            <ColumnDefinition Width="0.05*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" x:Name="lbl" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Title" >
+            Modifier un film
         </Label>
 
-        <StackLayout Grid.Row="0" WidthRequest="350" Padding="20">
-            <Label Text="Rechercher :" HorizontalTextAlignment="Start" FontSize="Medium" />
-            <Entry x:Name="research" Placeholder="Nom du film" />
+        <StackLayout Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" WidthRequest="350" Padding="20">
+            <Label Text="Titre :" HorizontalTextAlignment="Start" FontSize="Medium" />
+            <Entry x:Name="Title" Placeholder="Star wars ? Harry Potter" />
         </StackLayout>
 
-        <ScrollView Grid.Row="1">
-            <StackLayout>
-                <ListView ItemsSource="{Binding ResearchedItems}" VerticalOptions="FillAndExpand" HasUnevenRows="True" >
-                    <ListView.ItemTemplate Height="180" >
-                        <DataTemplate>
-                            <ViewCell Height="180">
-                                <Grid HeightRequest="180">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="0.35*" />
-                                        <ColumnDefinition Width="0.05*" />
-                                        <ColumnDefinition Width="0.5*" />
-                                        <ColumnDefinition Width="0.1*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="4" Source="{Binding PosterPath}" Aspect="AspectFit" HeightRequest="180" WidthRequest="100" />
-                                    <Label Grid.Column="2" Grid.Row="0" Text="{Binding Title}" FontAttributes="Bold" VerticalOptions="End"/>
-                                    <Label Grid.Column="2" Grid.Row="1" Text="{Binding ReleaseDate, StringFormat='Réalisé en : {0}'}" FontAttributes="Italic" VerticalOptions="Center"/>
-                                    <Image Grid.Column="4" Grid.Row="0" VerticalOptions="End" Source="add.png"/>
-                                    <Image Grid.Column="4" Grid.Row="1" VerticalOptions="End" Source="add.png"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </StackLayout>
-        </ScrollView>
+        <StackLayout Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" WidthRequest="350" Padding="20">
+            <Label Text="Description :" HorizontalTextAlignment="Start" FontSize="Medium" />
+            <Entry x:Name="Overview" Placeholder="Il était une fois ..." />
+        </StackLayout>
+
+        <StackLayout Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" WidthRequest="350" Padding="20">
+            <Label Text="Date de réalisation :" HorizontalTextAlignment="Start" FontSize="Medium" />
+            <Entry x:Name="Date" Placeholder="aaaa-mm-jj" />
+        </StackLayout>
+
+        <StackLayout Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" WidthRequest="350" Padding="20">
+            <Label Text="Note moyenne :" HorizontalTextAlignment="Start" FontSize="Medium" />
+            <Entry x:Name="Average" Placeholder="5.0 (Entre 0.0 et 5.0)" />
+        </StackLayout>
+
+        <StackLayout Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" WidthRequest="350" Padding="20">
+            <Label Text="Image :" HorizontalTextAlignment="Start" FontSize="Medium"/>
+            <Label x:Name="Poster" Text="Aucune image selectionnée" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="Small" HeightRequest="60"/>
+            <Button Text="Choose Image" Clicked="ChooseImageClicked" HeightRequest="40" />
+        </StackLayout>
+
+        <Button Grid.Column="1" Grid.Row="7" Text="Supprimer" Clicked="DeleteButtonClicked" />
+        <Button Grid.Column="2" Grid.Row="7" Text="Modifier" Clicked="ModifyButtonClicked" />
 
     </Grid>
-
 </ContentPage>

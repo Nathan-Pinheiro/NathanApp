@@ -5,11 +5,11 @@
     <Grid HorizontalOptions="CenterAndExpand" ColumnSpacing="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.17*" />
-            <RowDefinition Height="0.13*" />
-            <RowDefinition Height="0.13*" />
-            <RowDefinition Height="0.13*" />
-            <RowDefinition Height="0.13*" />
-            <RowDefinition Height="0.13*" />
+            <RowDefinition Height="0.12*" />
+            <RowDefinition Height="0.12*" />
+            <RowDefinition Height="0.12*" />
+            <RowDefinition Height="0.12*" />
+            <RowDefinition Height="0.20*" />
             <RowDefinition Height="0.075*" />
             <RowDefinition Height="0.06*" />
             <RowDefinition Height="0.045*" />
@@ -36,18 +36,19 @@
         </StackLayout>
 
         <StackLayout Grid.Column="1" Grid.Row="3" WidthRequest="350" Padding="20">
-            <Label Text="Image :" HorizontalTextAlignment="Start" FontSize="Medium" />
-            <Entry x:Name="Poster" Placeholder="https:// ..." />
-        </StackLayout>
-
-        <StackLayout Grid.Column="1" Grid.Row="4" WidthRequest="350" Padding="20">
             <Label Text="Date de réalisation :" HorizontalTextAlignment="Start" FontSize="Medium" />
             <Entry x:Name="Date" Placeholder="aaaa-mm-jj" />
         </StackLayout>
 
-        <StackLayout Grid.Column="1" Grid.Row="5" WidthRequest="350" Padding="20">
+        <StackLayout Grid.Column="1" Grid.Row="4" WidthRequest="350" Padding="20">
             <Label Text="Note moyenne :" HorizontalTextAlignment="Start" FontSize="Medium" />
             <Entry x:Name="Average" Placeholder="5.0 (Entre 0.0 et 5.0)" />
+        </StackLayout>
+
+        <StackLayout Grid.Column="1" Grid.Row="5" WidthRequest="350" Padding="20">
+            <Label Text="Image :" HorizontalTextAlignment="Start" FontSize="Medium"/>
+            <Label x:Name="Poster" Text="Aucune image selectionnée" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="Small" HeightRequest="60"/>
+            <Button Text="Choose Image" Clicked="ChooseImageClicked" HeightRequest="40" />
         </StackLayout>
 
         <Button Grid.Column="1" Grid.Row="7" Text="Valider" Clicked="AddButtonClicked" />

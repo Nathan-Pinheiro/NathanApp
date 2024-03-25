@@ -13,7 +13,7 @@
         <Tab Title="Ajouter" Icon="add.png">
             <ShellContent x:Name="AddMovieContent" />
         </Tab>
-        <Tab Title="ModifyMovie" Icon="monkey.png">
+        <Tab Title="Modifier" Icon="loupe.png">
             <ShellContent x:Name="ModifyMovieContent" />
         </Tab>
     </TabBar>

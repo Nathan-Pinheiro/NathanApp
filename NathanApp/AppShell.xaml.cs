@@ -13,7 +13,7 @@ namespace NathanApp
 
             Movies moviesPage = new(movieCollection);
             AddMovie addMoviePage = new(movieCollection);
-            ModifyMovie modifyMovieContent = new(movieCollection);
+            FindMovie modifyMovieContent = new(movieCollection);
 
             MovieContent.ContentTemplate = new DataTemplate(() => moviesPage);
             AddMovieContent.ContentTemplate = new DataTemplate(() => addMoviePage);
